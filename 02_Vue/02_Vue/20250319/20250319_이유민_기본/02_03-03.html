@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <div id="app">
+      <input type="text" :value="value" />
+      <br />
+      <img :src="image" alt="" />
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      const vm = Vue.createApp({
+        name: 'App',
+        data() {
+          return {
+            value: 'v-bind 디렉티브',
+            image:
+              'https://cdn.pixabay.com/photo/2025/03/03/13/49/little-girl-9444205_640.jpg',
+          };
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>
