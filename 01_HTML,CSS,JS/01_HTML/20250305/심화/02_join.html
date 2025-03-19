@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <fieldset>
+        <legend>회원가입</legend>
+        <table>
+          <tr>
+            <th>사용자 ID</th>
+            <td><input type="text" /></td>
+          </tr>
+          <tr>
+            <th>비밀번호</th>
+            <td><input type="password" /></td>
+          </tr>
+          <tr>
+            <th>비밀번호 확인</th>
+            <td><input type="password" /></td>
+          </tr>
+          <tr>
+            <th>이름</th>
+            <td><input type="text" /></td>
+          </tr>
+          <tr>
+            <th>성별</th>
+            <td>
+              <input type="radio" name="gender" id="m" />
+              <label for="m">남</label>
+              <input type="radio" name="gender" id="w" />
+              <label for="w">여</label>
+            </td>
+          </tr>
+          <tr>
+            <th>취미</th>
+            <td>
+              <input type="checkbox" name="hobby" id="s" />
+              <label for="s">축구</label>
+              <input type="checkbox" name="hobby" id="b" />
+              <label for="b">야구</label>
+              <input type="checkbox" name="hobby" id="a" />
+              <label for="a">배구</label>
+              <input type="checkbox" name="hobby" id="k" />
+              <label for="k">농구</label>
+            </td>
+          </tr>
+          <tr>
+            <th>email</th>
+            <td><input type="email" /></td>
+          </tr>
+          <tr>
+            <th>역할</th>
+            <td>
+              <select>
+                <option>ADMIN</option>
+                <option>관리자</option>
+                <option>일반 회원</option>
+              </select>
+            </td>
+          </tr>
+        </table>
+        <button type="submit">확인</button>
+        <button type="reset">다시 쓰기</button>
+      </fieldset>
+    </form>
+  </body>
+</html>

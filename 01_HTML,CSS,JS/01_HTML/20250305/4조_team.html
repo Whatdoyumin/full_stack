@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>상품 관리 시스템</title>
+    <style>
+      @font-face {
+        font-family: 'Pretendard-Regular';
+        src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
+          format('woff');
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      * {
+        font-family: 'Pretendard-Regular';
+      }
+
+      body {
+        background-color: rgb(238, 238, 238);
+      }
+
+      table {
+        border-collapse: collapse;
+        border-radius: 10px;
+        border-spacing: 0;
+        width: 100%;
+      }
+      th,
+      td {
+        padding: 10px;
+        text-align: left;
+        border: 1px solid #aaa;
+      }
+      thead th,
+      tbody th {
+        background-color: whitesmoke;
+      }
+      .productRow:hover {
+        background-color: rgb(114, 204, 91);
+        color: white;
+      }
+      #electronics {
+        color: red;
+      }
+      #clothes {
+        color: rgb(255, 0, 230);
+      }
+      #dailyGoods {
+        color: rgb(94, 44, 203);
+      }
+      .styleTr {
+        background-color: rgb(250, 250, 250);
+      }
+      .saleReportTable {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .italic {
+        font-style: italic;
+      }
+      .select {
+        font-size: small;
+      }
+      .normal {
+        margin: 0px;
+      }
+
+      fieldset {
+        padding: 20px;
+        background-color: white;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+
+      #center {
+        text-align: center;
+      }
+
+      a {
+        font-size: 20px;
+        text-decoration: none;
+      }
+      a:visited {
+        color: black;
+      }
+      .menubar {
+        list-style: none;
+        text-align: center;
+        align-items: center;
+        background-color: rgb(221, 221, 221);
+        font-size: 20px;
+        font-weight: bold;
+        position: sticky;
+        height: 50px;
+        width: 100%;
+        top: -50px;
+        display: flex;
+        gap: 100px;
+      }
+      a > p:hover {
+        font-size: 22px;
+      }
+    </style>
+  </head>
+  <body>
+    <heaader>
+      <h1 id="center">상품 관리 시스템 — 관리자 페이지</h1>
+    </heaader>
+    <nav>
+      <ul class="menubar">
+        <li>
+          <a href="#now"><p>재고 관리</p></a>
+        </li>
+        <li>
+          <a href="#createProduct"><p>신규 상품 등록</p></a>
+        </li>
+        <li>
+          <a href="#saleReport"><p>판매 보고서</p></a>
+        </li>
+      </ul>
+    </nav>
+    <section>
+      <article>
+        <h2 id="now" style="text-align: center">현재 재고 현황</h2>
+        <h3>카테고리별 보기</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>상품 ID</th>
+              <th>상품명</th>
+              <th>카테고리</th>
+              <th>재고량</th>
+              <th>상태</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="productRow">
+              <td>A-001</td>
+              <td>프리미엄 무선 이어폰</td>
+              <td id="electronics">전자기기</td>
+              <td>15</td>
+              <td>판매중</td>
+            </tr>
+            <tr class="productRow styleTr">
+              <td>B-045</td>
+              <td>유기농 면 티셔츠</td>
+              <td id="clothes">의류</td>
+              <td>3</td>
+              <td>재고 부족</td>
+            </tr>
+            <tr class="productRow">
+              <td>C-127</td>
+              <td>천연 비누 세트</td>
+              <td id="dailyGoods">생활용품</td>
+              <td>0</td>
+              <td>품절</td>
+            </tr>
+            <tr class="productRow styleTr">
+              <td>A-002</td>
+              <td>스마트 시계</td>
+              <td id="electronics">전자기기</td>
+              <td>8</td>
+              <td>판매중</td>
+            </tr>
+            <tr>
+              <td colspan="3">총합</td>
+              <td>26</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+    </section>
+    <form>
+      <h2 id="createProduct" style="text-align: center">신규 상품 등록</h2>
+      <fieldset>
+        <legend>기본 정보</legend>
+        <div>
+          <label for="productname">상품명:</label>
+          <input id="productname" type="text" />
+        </div>
+
+        <br />
+        <div>
+          <label for="category">카테고리:</label>
+          <select>
+            <optgroup label="전자기기">
+              <option>스마트폰</option>
+              <option>컴퓨터</option>
+              <option>주변기기</option>
+            </optgroup>
+
+            <optgroup label="의류">
+              <option>상의</option>
+              <option>하의</option>
+              <option>아우터</option>
+            </optgroup>
+
+            <optgroup label="생활용품">
+              <option>주방용품</option>
+              <option>욕실용품</option>
+              <option>청소용품</option>
+            </optgroup>
+          </select>
+        </div>
+        <br />
+        <div>
+          <label for="price">가격:</label>
+          <input id="price" type="text" />
+        </div>
+        <br />
+        <div>
+          <label for="count">초기 재고량:</label>
+          <input id="count" type="text" />
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>상세정보</legend>
+        <p class="normal">상품 설명:</p>
+        <textarea
+          cols="50"
+          rows="5"
+          placeholder="상품에 대한 자세한 설명을 입력하세요."
+        ></textarea>
+        <p>상품 특성 (해당되는 항목 모두 선택):</p>
+        <input id="new" type="checkbox" name="s" />
+        <label for="new">신상품</label><br />
+        <input id="disc" type="checkbox" name="s" />
+        <label for="disc">할인 상품</label><br />
+        <input id="p" type="checkbox" name="s" />
+        <label for="p">인기 상품</label>
+        <p>배송 방법:</p>
+        <input id="ge" type="radio" name="b" />
+        <label for="ge">일반 배송</label><br />
+        <input id="sp" type="radio" name="b" />
+        <label for="sp">특급 배송</label><br />
+        <input id="pu" type="radio" name="b" />
+        <label for="pu">매장 픽업</label>
+      </fieldset>
+      <fieldset>
+        <legend>이미지 업로드</legend>
+        <h>상품 이미지 :</h>
+        <input type="file" name="file" value="file" /><br />
+        <p class="select">
+          * 최대 5개의 이미지를 업로드할 수 있습니다. 파일 크기는 이미지당 2MB를
+          초과할 수 없습니다.
+        </p>
+      </fieldset>
+      <br />
+      <button type="submit">상품 등록</button>
+      <button type="reset">초기화</button>
+    </form>
+
+    <h2 id="saleReport" style="text-align: center">판매 보고서</h2>
+    <div class="saleReportTable">
+      <p>월별 카테고리 매출 현황 (단위: 만원)</p>
+      <table border="1">
+        <thead class="thead">
+          <tr>
+            <th rowspan="2">월</th>
+            <th colspan="3">카테고리</th>
+            <th rowspan="2">총액</th>
+          </tr>
+          <tr>
+            <th>전자기기</th>
+            <th>의류</th>
+            <th>생활용품</th>
+          </tr>
+        </thead>
+        <tr class="productRow">
+          <td>1월</td>
+          <td>1,250</td>
+          <td>850</td>
+          <td>340</td>
+          <td>2,440</td>
+        </tr>
+        <tr class="productRow styleTr">
+          <td>2월</td>
+          <td>980</td>
+          <td>1,120</td>
+          <td>470</td>
+          <td>2,570</td>
+        </tr>
+        <tr class="productRow">
+          <td>3월</td>
+          <td>1,420</td>
+          <td>940</td>
+          <td>520</td>
+          <td>2,880</td>
+        </tr>
+      </table>
+    </div>
+
+    <footer>
+      <p class="italic">연락처: <a href="#">admin@example.com</a></p>
+      <p class="italic">주소: 서울특별시 광진구 능동로 192-16 5층</p>
+      <p>© 2025 온라인 쇼핑몰. 모든 권리 보유.</p>
+    </footer>
+  </body>
+</html>
