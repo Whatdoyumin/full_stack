@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- view -->
+    <div id="app">
+      <h2>{{message}}</h2>
+      <p>{{state}}</p>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let model = { message: 'Hello Vue3!', state: '아 너무 졸려' }; // 객체 리터럴을 넘겨줌
+      let vm = Vue.createApp({
+        // Vue 어플리케이션을 mount (초기화 과정에서 항상 등장)
+        name: 'App',
+        data() {
+          return model; // proxy 객체
+          // data 함수에서 return 되는 객체는
+          // view의 반응형 시스템에 의해서 관리된다.
+        },
+      }).mount('#app'); // 연결
+    </script>
+  </body>
+</html>
