@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- view -->
+    <div id="app">
+      <div v-text="message"></div>
+      <div v-html="message"></div>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let model = { message: '<h2>Hello</h2>' };
+      let vm = Vue.createApp({
+        name: 'App',
+        data() {
+          return model;
+        },
+      }).mount('#app'); // 연결
+    </script>
+  </body>
+</html>
