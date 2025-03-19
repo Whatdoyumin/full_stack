@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #menu {
+        width: 260px;
+        float: right;
+      }
+      #section {
+        width: 700px;
+        float: left; /* left로 입력해도 상관없음 */
+      }
+
+      li {
+        list-style: none;
+      }
+
+      @media screen and (max-width: 767px) {
+        /* 스마트폰 사이즈에서는 전부 해제합니다 . */
+        body {
+          width: auto;
+        }
+        #menu {
+          width: auto;
+          float: none;
+        }
+        #section {
+          width: auto;
+          float: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="media">
+      <ul>
+        <li>메뉴A</li>
+        <li>메뉴B</li>
+        <li>메뉴C</li>
+      </ul>
+    </div>
+    <div id="section">
+      <h1>Lorem, ipsum dolor.</h1>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod corporis
+        nisi ducimus nulla modi ipsa consequatur sint iusto est quaerat unde
+        placeat nemo, id fugiat inventore in, tempore neque magnam. Lorem ipsum,
+        dolor sit amet consectetur adipisicing elit. Totam officiis velit rem,
+        atque nostrum quam non vitae repellendus eius cum voluptate quaerat
+        eligendi reprehenderit consectetur maiores alias perspiciatis illo
+        facere. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum
+        itaque iusto blanditiis incidunt molestias praesentium voluptatum aut!
+        Modi corporis nam sed exercitationem, quos assumenda ipsam earum, sequi
+        qui laudantium distinctio? Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Quod tenetur numquam in odio. Odit praesentium animi
+        incidunt. Et quibusdam sit eum ea rem explicabo, ipsum aliquam, nisi
+        omnis eaque beatae.
+      </p>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora
+        recusandae alias nihil aspernatur vitae dolores, adipisci natus
+        excepturi veritatis eius voluptatibus omnis veniam, autem rerum id
+        provident officia libero doloribus.
+      </p>
+    </div>
+  </body>
+</html>
